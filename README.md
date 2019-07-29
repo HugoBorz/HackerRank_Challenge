@@ -30,7 +30,7 @@ Where:
 **timestamp** - transaction time in epoch in millis in UTC time zone (this is not current
 timestamp). Timestamp format: 'yyyy-MM-ddTHH:mm:ss.SSSX'
 
-**Returns**: Empty body with either 201 or 204.
+**Returns**: Empty body with either:
 
 - 201 - in case of success
 - 204 - if transaction is older than 60 seconds
