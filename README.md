@@ -92,3 +92,8 @@ maven is used, then mvn clean install should complete successfully.
 - Make sure to send the case in memory solution without database (including in-memory
 database)
 - Endpoints have to execute in constant time and memory (O(1))
+
+##Build and Run
+mvn clean install     - build project
+mvn spring-boot:run   - run project
+
