@@ -95,5 +95,6 @@ database)
 
 ## Build and Run
 mvn clean install     - build project
+
 mvn spring-boot:run   - run project
 
