@@ -1,4 +1,4 @@
-package com.n26.data;
+package com.hackerrank.data;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

@@ -1,9 +1,9 @@
-package com.n26.service;
+package com.hackerrank.service;
 
-import com.n26.common.NoContentException;
-import com.n26.common.UnprocessableException;
-import com.n26.data.Statistics;
-import com.n26.data.Transaction;
+import com.hackerrank.common.NoContentException;
+import com.hackerrank.common.UnprocessableException;
+import com.hackerrank.data.Statistics;
+import com.hackerrank.data.Transaction;
 
 public interface TransactionService {
 

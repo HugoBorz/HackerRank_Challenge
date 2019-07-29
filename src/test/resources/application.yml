@@ -1,8 +1,8 @@
 stat:
-  cache-life-time-sec: 120
+  cache-life-time-sec: 10
   cache-added-count-before-clean: 100
   stat-interval-sec: 10
   
 
 logging.level:
-  com.n26: DEBUG
+  com.hackerrank: DEBUG

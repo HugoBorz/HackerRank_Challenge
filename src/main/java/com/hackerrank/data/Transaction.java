@@ -1,6 +1,6 @@
-package com.n26.data;
+package com.hackerrank.data;
 
-import com.n26.common.UnprocessableException;
+import com.hackerrank.common.UnprocessableException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -76,9 +76,6 @@ public class Transaction {
 
     @Override
     public String toString() {
-         return "Transaction{" +
-                "amount = " + amount +
-                ", timestamp = " + timestamp +
-                "}";
+         return String.format("{\"amount\": %s, \"timestamp\": %s}", amount, sdf.format(timestamp));
     }
 }

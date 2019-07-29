@@ -1,11 +1,11 @@
-package com.n26;
+package com.hackerrank;
 
-import com.n26.common.NoContentException;
-import com.n26.common.UnprocessableException;
-import com.n26.data.Statistics;
-import com.n26.data.Transaction;
-import com.n26.properties.StatisticsProperties;
-import com.n26.service.TransactionService;
+import com.hackerrank.common.NoContentException;
+import com.hackerrank.common.UnprocessableException;
+import com.hackerrank.data.Statistics;
+import com.hackerrank.data.Transaction;
+import com.hackerrank.properties.StatisticsProperties;
+import com.hackerrank.service.TransactionService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,9 +1,9 @@
-package com.n26.controller;
+package com.hackerrank.controller;
 
-import com.n26.common.NoContentException;
-import com.n26.common.UnprocessableException;
-import com.n26.data.Transaction;
-import com.n26.service.TransactionService;
+import com.hackerrank.common.NoContentException;
+import com.hackerrank.common.UnprocessableException;
+import com.hackerrank.data.Transaction;
+import com.hackerrank.service.TransactionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

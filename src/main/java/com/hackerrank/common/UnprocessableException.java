@@ -1,4 +1,4 @@
-package com.n26.common;
+package com.hackerrank.common;
 
 public class UnprocessableException extends Exception{
 

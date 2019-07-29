@@ -1,12 +1,12 @@
-package com.n26.service;
+package com.hackerrank.service;
 
-import com.n26.common.NoContentException;
-import com.n26.common.UnprocessableException;
-import com.n26.data.Statistics;
-import com.n26.data.Transaction;
-import com.n26.data.cache.CacheEngine;
-import com.n26.data.cache.TransactionsCache;
-import com.n26.properties.StatisticsProperties;
+import com.hackerrank.common.NoContentException;
+import com.hackerrank.common.UnprocessableException;
+import com.hackerrank.data.Statistics;
+import com.hackerrank.data.Transaction;
+import com.hackerrank.data.cache.CacheEngine;
+import com.hackerrank.data.cache.TransactionsCache;
+import com.hackerrank.properties.StatisticsProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

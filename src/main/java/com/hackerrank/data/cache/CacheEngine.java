@@ -1,7 +1,7 @@
-package com.n26.data.cache;
+package com.hackerrank.data.cache;
 
-import com.n26.data.Statistics;
-import com.n26.data.Transaction;
+import com.hackerrank.data.Statistics;
+import com.hackerrank.data.Transaction;
 
 public interface CacheEngine {
 

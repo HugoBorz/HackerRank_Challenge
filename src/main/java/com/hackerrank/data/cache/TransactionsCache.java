@@ -1,11 +1,10 @@
-package com.n26.data.cache;
+package com.hackerrank.data.cache;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
-import com.n26.data.Statistics;
-import com.n26.data.Transaction;
-import com.n26.properties.StatisticsProperties;
-import javafx.util.Pair;
+import com.hackerrank.data.Statistics;
+import com.hackerrank.data.Transaction;
+import com.hackerrank.properties.StatisticsProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +13,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.AbstractMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.TimeUnit;
@@ -25,16 +25,17 @@ public class TransactionsCache implements CacheEngine{
     @Autowired
     StatisticsProperties properties;
     
-    //using Guava Cache for time-limited storage 
-    private Cache<Long, Pair<Long, BigDecimal>> expiredCache;
+    //using Guava Cache for time-limited storage
+    private Cache<Long, AbstractMap.SimpleEntry<Long, BigDecimal>> expiredCache;
     private final Logger log = LoggerFactory.getLogger(this.getClass());
-    private ConcurrentMap<Long, Pair<Long, BigDecimal>> mapCache;
+    private ConcurrentMap<Long, AbstractMap.SimpleEntry<Long, BigDecimal>> mapCache;
     private int addedCount = 0;
     private long tKey = 0;
     
     @PostConstruct
     public void postConstruct()
     {
+
         expiredCache = CacheBuilder.newBuilder().expireAfterWrite(properties.getCacheLifeTimeSec(), TimeUnit.SECONDS).build();
         mapCache = expiredCache.asMap();
         log.debug("TransactionCache was created successfully!");
@@ -43,7 +44,7 @@ public class TransactionsCache implements CacheEngine{
     @Override
     public void put(Transaction t) {
         tKey++;
-        mapCache.put(tKey, new Pair<>(t.getTimestamp(), t.getAmount()));
+        mapCache.put(tKey, new AbstractMap.SimpleEntry<>(t.getTimestamp(), t.getAmount()));
         log.debug("Transaction added to cache. Cache lenght: "+mapCache.size());
         addedCount++;
         if (addedCount > properties.getAddedCountBeforeClean()){
@@ -74,7 +75,7 @@ public class TransactionsCache implements CacheEngine{
         double max = 0, min = 0, sum = 0;
         long count = 0;
 
-        for (Map.Entry<Long, Pair<Long, BigDecimal>> t : mapCache.entrySet() )
+        for (Map.Entry<Long, AbstractMap.SimpleEntry<Long, BigDecimal>> t : mapCache.entrySet() )
         {
             long timestamp = t.getValue().getKey();
             if (timestamp < fromMoment || timestamp > toMoment){
