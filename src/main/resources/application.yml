@@ -1,0 +1,8 @@
+stat:
+  cache-life-time-sec: 120
+  cache-added-count-before-clean: 100
+  stat-interval-sec: 60
+  
+
+logging.level:
+  com.n26: DEBUG
